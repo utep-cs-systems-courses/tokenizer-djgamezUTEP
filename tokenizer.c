@@ -41,4 +41,23 @@ int count_words(char *str){
   }
   return word_ct;
 }
+char *copy_str(char *src, short len){
+  int i=0;
+  char *stringCopy=(char*)malloc(len);
+  while(*(src+i)!='\0'&&i<len){
+      *(stringCopy+i)=*(src+i);
+      i++;
+  }
+      
+      return stringCopy;
+}
+char **tokenize(char* str){
+  
+  newToken = copyStr(wordStart, wordLen);
+  tokens[i] = newToken;
+  start = wordStart(input);
+  end = wordEnd(start);
+  len = end - start;
+  
+}
   
