@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 int is_space_char(char current){
   if(current == '\n'||current ==' '||current == '\0' ){
     return 1;
@@ -52,12 +54,32 @@ char *copy_str(char *src, short len){
       return stringCopy;
 }
 char **tokenize(char* str){
-  
-  newToken = copyStr(wordStart, wordLen);
-  tokens[i] = newToken;
-  start = wordStart(input);
-  end = wordEnd(start);
-  len = end - start;
-  
-}
+  int i=0;
+  int word_ct= count_words(str);
+  char **tokens= (char**)malloc(sizeof (char*) *( word_ct+1));
+  char* start;
+  char* end;
+  int len;
+  char* newToken;
+  start=str;
+  while(i<word_ct){
+      start=word_start(start);
+      end=word_end(start);
+      len=end-start;
+      newToken= copy_str(start, len);
+      tokens[i]=newToken;
+      i++;
+      start=end;
+    }
+    tokens[i]=NULL;
+    return tokens;
+  }
+
+  void print_tokens(char **toks){
+    int i=0;
+    while(toks[i]!=NULL){
+      printf("%d:  %s \n", i, toks[i]);
+      i++;
+    }
+  }
   

@@ -17,6 +17,10 @@ int main(){
   char *start= word_start(userIn);
   printf("The first character of the string is: %s",start);
   printf("there are %d words", count_words(userIn));
+  printf("\n");
+  char** tokens;
+  tokens=tokenize(userIn);
+  print_tokens(tokens);
   return 0;
-
+  
 }
