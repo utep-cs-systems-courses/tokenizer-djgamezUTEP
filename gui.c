@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "gui.h" //double quote for your own header files
+#include "history.h"
 
 int main(){
   char *userIn=(char*)malloc(64); /*this is where we will store read data we will allocate 64 bytes                                   for many char*/
@@ -21,6 +22,10 @@ int main(){
   char** tokens;
   tokens=tokenize(userIn);
   print_tokens(tokens);
+  List* history=init_history();
+  add_history(history, userIn);
+  print_history(history);
   return 0;
+  
   
 }
