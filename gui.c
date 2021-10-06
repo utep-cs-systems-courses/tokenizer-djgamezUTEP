@@ -22,9 +22,10 @@ int main(){
   char** tokens;
   tokens=tokenize(userIn);
   print_tokens(tokens);
-  /*  List* history=init_history();
+  printf("Printing History \n");
+  List *history=init_history();
   add_history(history, userIn);
-  print_history(history);*/
+  print_history(history);
   return 0;
   
   
